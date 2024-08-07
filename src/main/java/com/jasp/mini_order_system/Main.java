@@ -1,5 +1,7 @@
+//git 연결 테스트3
 package com.jasp.mini_order_system;
-
+//git test
+//깃 테스트 중
 import static com.jasp.mini_order_system.Utils.print;
 
 import com.jasp.mini_order_system.entity.Account;
@@ -25,7 +27,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // 데이터 초기화
+        // 데이터 초기화git
         /*itemDataInit();
         memberAndAccountDataInit();*/
 

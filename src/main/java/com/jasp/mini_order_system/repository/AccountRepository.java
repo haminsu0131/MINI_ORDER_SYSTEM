@@ -12,26 +12,44 @@ public class AccountRepository implements Repository<Account> {
 
     @Override
     public void save(Account entity) {
-
+        DB.put(entity.getId(), entity);
     }
 
     @Override
-    public Account findById(int id) {
+    public Account findById(int id)
+    {
+        if(DB.containsKey(id))
+        {
+            return DB.get(id);
+        }
         return null;
     }
 
     @Override
-    public List<Account> findAll() {
-        return List.of();
+    public List<Account> findAll()
+    {
+        return new ArrayList<>(DB.values());
     }
 
     @Override
-    public boolean update(Account entity) {
+    public boolean update(Account entity)
+    {
+        if(DB.containsKey(entity.getId()))
+        {
+            DB.put(entity.getId(), entity);
+            return true;
+        }
         return false;
     }
 
     @Override
-    public boolean delete(int id) {
+    public boolean delete(int id)
+    {
+        if(DB.containsKey(id))
+        {
+            DB.remove(id);
+            return true;
+        }
         return false;
     }
 }
